@@ -1,22 +1,34 @@
 clear;
+%Array map creation
+%Author Judy Afana, Temidire Oduyale & Mechatronics Team
+%Design Project 2 
+%Mechatronics
+
+%create direction matrices
 x = 5;
 y = 9;
-global MNorth = zeros(x,y);
-global MSouth = zeros(x,y);
-global MEast = zeros(x,y);
-global MWest = zeros(x,y);
-        
+global MNorth; global MSouth; global MEast; global MWest;
+
+%initialize matrices to zero
+MNorth = zeros(x,y);
+MSouth = zeros(x,y);
+MEast = zeros(x,y);
+MWest = zeros(x,y);
+
+%create the map
+%1 = walls ; 0 = no wall
+%create north and east walls, and mirror to get south and west walls
 for i = 1:9
      MNorth(5,i) = 1;
 end
 
-for b = 2:8
-    MSouth(1,b)= 1;
+for i = 2:8
+    MSouth(1,i)= 1;
 end
 
-for j = 1:5
-    MWest(j,1)=1;
-    MEast(j,9)=1;
+for i = 1:5
+    MWest(i,1)=1;
+    MEast(i,9)=1;
 end
 
 MNorth(4,3)=1;
@@ -38,9 +50,9 @@ MEast(5,1)=1;
 MEast(5,7)=1;
 MEast(5,9)=1;
 
-for k = 2:5
-    for l = 1:9
-        MSouth(k,l)= MNorth(k-1,l);
+for i = 2:5
+    for j = 1:9
+        MSouth(i,j)= MNorth(i-1,j);
     end
 end
 
@@ -51,6 +63,8 @@ for m = 2:9
 end
 
 
+
+%end of map creation
 
 
 
