@@ -1,0 +1,15 @@
+global robotdirection;
+global a;
+global c;
+
+startPosRow = 1;
+startPosCol = 1;
+endPosRow = 1;
+endPosCol = 9;
+
+currentPosRow = startPosRow;
+currentPosCol = startPosCol;
+
+
+
+
